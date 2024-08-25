@@ -1,0 +1,300 @@
+/* General Body and Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+/* navbar */
+/* Header Styling */
+header {
+    position: relative;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add subtle shadow */
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners for nav links */
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block; /* Align with text */
+    font-size: 16px; /* Consistent font size */
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+nav ul li a.active {
+    background-color: #388e3c;
+}
+
+/* Search Bar Styling */
+#search {
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 50%;
+    max-width: 400px;
+    margin: 20px auto; /* Centered horizontally with more margin */
+    display: block;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+#search:focus {
+    border-color: #45a049;
+    outline: none;
+}
+
+/* Main Content Area */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensure space between main content and sidebar */
+    padding: 20px;
+    gap: 20px; /* Add gap between items */
+}
+
+/* Plant List Styling */
+#plant-list {
+    flex: 1; /* Take up the remaining space */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Plant Item Styling */
+.plant-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #fff;
+    width: 250px; /* Fixed width for consistency */
+    height: 350px; /* Fixed height for consistency */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text inside the card */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    margin-bottom: 20px; /* Space below each card */
+}
+
+.plant-item img.plant-image {
+    width: 100%;
+    height: 135px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border-bottom: 1px solid #ddd;
+}
+
+.plant-item .content {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between text and button */
+}
+
+/* Add to Cart Button Styling */
+.plant-item .add-to-cart-button {
+    margin-bottom: 4px; /* Adjust the space below the button */
+    background: #FF6347;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.plant-item .add-to-cart-button:hover {
+    background: #FF4500;
+}
+
+/* Hover Effect */
+.plant-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Sidebar (Cart) Styling */
+aside {
+    flex: 0 0 300px; /* Ensure the sidebar has a fixed width */
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: sticky;
+    top: 20px; /* Keep sidebar in view when scrolling */
+}
+
+/* Cart Items Styling */
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+#cart-items li button {
+    background: #FF6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+#cart-items li button:hover {
+    background: #FF4500;
+}
+
+/* Filter Buttons Styling */
+nav button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+nav button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+nav button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    aside {
+        width: 100%; /* Full width on smaller screens */
+        position: static; /* Sidebar scrolls with content */
+        margin-top: 20px; /* Add margin top for separation */
+    }
+
+    #plant-list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    aside {
+        margin-top: 20px; /* Margin for separation on very small screens */
+    }
+}
+
+/* General Button Styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#message {
+    display: none; /* Hide by default */
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    font-size: 16px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+/* Back to Index Button Styling */
+.back-to-index {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it’s on top of other elements */
+}
+
+.btn-back {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.btn-back:active {
+    transform: scale(0.95);
+}
