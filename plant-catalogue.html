@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Catalog</title>
+    <link rel="stylesheet" href="css/plant-catalogue.css">
+     <!-- Favicon -->
+     <link href="img/plant.png" rel="icon">
+</head>
+
+<body>
+
+    <header>
+        <h1>Plant Catalogue</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-category="indoor">Indoor</a></li>
+                <li><a href="#" data-category="outdoor">Outdoor</a></li>
+                <li><a href="#" data-category="succulents">Succulents</a></li>
+                <li><a href="#" data-category="flowering">Flowering Shrubs</a></li>
+            </ul>
+            <input type="text" id="search" placeholder="Search plants...">
+            <button id="sortPrice">Sort by Price</button>
+            <button id="sortPopularity">Sort by Popularity</button>
+            <button id="sortAlphabetical">Sort Alphabetically</button>
+        </nav>
+    </header>
+
+    <main class="plant-section d-flex g-4 m-5">
+        <section id="plant-list" class="plant-section d-flex g-4 m-5">
+            <!-- Plant items will be dynamically inserted here -->
+        </section>
+        <aside>
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </ul>
+            <button id="checkout">Checkout</button>
+        </aside>
+    </main>
+
+    <!-- Back to Index Button -->
+    <div class="back-to-index">
+        <a href="index.html" class="btn-back">Back to home</a>
+    </div>
+    <script src="js/plant-catalogue.js"></script>
+
+</body>
+
+</html>
